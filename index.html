@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>International Student Help Desk</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER / HERO ===== -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-logo">🎓</div>
+      <h1>International Student Help Desk</h1>
+      <p class="hero-sub">
+        Your friendly guide to admissions, visas, accommodation, campus life, and more.
+        Ask a question below or explore a topic to get started.
+      </p>
+    </div>
+  </header>
+
+  <!-- ===== NAV TABS ===== -->
+  <nav class="nav-tabs" role="navigation" aria-label="Main navigation">
+    <button class="tab-btn active" data-tab="home">🏠 Home</button>
+    <button class="tab-btn" data-tab="chatbot">💬 Chatbot</button>
+    <button class="tab-btn" data-tab="admissions">📋 Admissions</button>
+    <button class="tab-btn" data-tab="visa">🛂 Visa Guidance</button>
+    <button class="tab-btn" data-tab="accommodation">🏠 Accommodation</button>
+    <button class="tab-btn" data-tab="campus">🏫 Campus Life</button>
+    <button class="tab-btn" data-tab="daily">☀️ Daily Life</button>
+    <button class="tab-btn" data-tab="faqs">❓ FAQs</button>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content">
+
+    <!-- HOME TAB -->
+    <section id="tab-home" class="tab-panel active">
+      <h2>Welcome!</h2>
+      <p>
+        Moving to a new country for your studies is exciting — and sometimes overwhelming.
+        This Help Desk is here to make things easier. Use the tabs above to explore topics,
+        or go straight to the <strong>Chatbot</strong> tab to ask your own questions.
+      </p>
+
+      <div class="category-grid">
+        <div class="category-card" data-goto="admissions">
+          <span class="card-icon">📋</span>
+          <h3>Admissions</h3>
+          <p>Applications, documents, deadlines, and requirements.</p>
+        </div>
+        <div class="category-card" data-goto="visa">
+          <span class="card-icon">🛂</span>
+          <h3>Visa Guidance</h3>
+          <p>Student visa types, application steps, and tips.</p>
+        </div>
+        <div class="category-card" data-goto="accommodation">
+          <span class="card-icon">🏠</span>
+          <h3>Accommodation</h3>
+          <p>On-campus housing, off-campus rentals, and advice.</p>
+        </div>
+        <div class="category-card" data-goto="campus">
+          <span class="card-icon">🏫</span>
+          <h3>Campus Life</h3>
+          <p>Libraries, clubs, health services, and support offices.</p>
+        </div>
+        <div class="category-card" data-goto="daily">
+          <span class="card-icon">☀️</span>
+          <h3>Daily Life</h3>
+          <p>Banking, transport, SIM cards, and grocery tips.</p>
+        </div>
+        <div class="category-card" data-goto="faqs">
+          <span class="card-icon">❓</span>
+          <h3>FAQs</h3>
+          <p>Quick answers to the most common questions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHATBOT TAB -->
+    <section id="tab-chatbot" class="tab-panel">
+      <h2>Ask the Chatbot</h2>
+      <p class="hint">
+        Type a question below. Try things like
+        <em>"How do I apply?"</em>, <em>"What documents do I need for a visa?"</em>, or
+        <em>"Where can I stay on campus?"</em>
+      </p>
+
+      <div class="chat-window" id="chatWindow" aria-live="polite" aria-label="Chat messages">
+        <div class="chat-msg bot">
+          <span class="chat-avatar">🤖</span>
+          <div class="chat-bubble">
+            Hello! I am your International Student Help Desk assistant.
+            Ask me anything about admissions, visas, accommodation, campus life, or daily life. 😊
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-suggestions" id="chatSuggestions">
+        <p class="hint">Try a sample question:</p>
+        <div class="suggestion-chips" id="suggestionChips"></div>
+      </div>
+
+      <form class="chat-form" id="chatForm" autocomplete="off">
+        <input
+          type="text"
+          id="chatInput"
+          class="chat-input"
+          placeholder="Type your question here…"
+          aria-label="Your question"
+          maxlength="300"
+        />
+        <button type="submit" class="chat-send-btn" aria-label="Send">Send ▶</button>
+      </form>
+    </section>
+
+    <!-- ADMISSIONS TAB -->
+    <section id="tab-admissions" class="tab-panel" data-category="admissions"></section>
+
+    <!-- VISA TAB -->
+    <section id="tab-visa" class="tab-panel" data-category="visa"></section>
+
+    <!-- ACCOMMODATION TAB -->
+    <section id="tab-accommodation" class="tab-panel" data-category="accommodation"></section>
+
+    <!-- CAMPUS LIFE TAB -->
+    <section id="tab-campus" class="tab-panel" data-category="campus"></section>
+
+    <!-- DAILY LIFE TAB -->
+    <section id="tab-daily" class="tab-panel" data-category="daily"></section>
+
+    <!-- FAQS TAB -->
+    <section id="tab-faqs" class="tab-panel" data-category="faqs"></section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p>
+      International Student Help Desk &mdash; College Project Demo<br />
+      <small>
+        This application provides general guidance only.
+        Always verify important information (visa rules, deadlines, policies)
+        with your university's official international office.
+      </small>
+    </p>
+  </footer>
+
+  <!-- Scripts (loaded last so the DOM is ready) -->
+  <script src="categories.js"></script>
+  <script src="chatbot.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
